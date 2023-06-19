@@ -1,0 +1,39 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <S:Header xmlns:S="http://schemas.xmlsoap.org/soap/envelope/">
+    <wsse:Security S:actor="http://eln.fss.ru/actor/mo/1025401011833" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+      <ds:Signature>
+        <SignedInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+          <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+          <SignatureMethod Algorithm="urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34102012-gostr34112012-256"/>
+          <Reference URI="#OGRN_1025401011833">
+            <Transforms>
+              <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+            </Transforms>
+            <DigestMethod Algorithm="urn:ietf:params:xml:ns:cpxmlsec:algorithms:gostr34112012-256"/>
+            <DigestValue>zq+DuiHCA3BTZOpK3nDwC2WCJFhKPxTAzvUkMYzM85o=</DigestValue>
+          </Reference>
+        </SignedInfo>
+        <SignatureValue xmlns="http://www.w3.org/2000/09/xmldsig#">SpJB9bQqP7VvEPjHJebCc9nUBIQ1hF4ytCuabyZ94GtD+HRj6pUfprWrNtSxTgTrBHhj0rC4Yel9nMjPd/QGFA==</SignatureValue>
+        <ds:KeyInfo>
+          <wsse:SecurityTokenReference>
+            <wsse:Reference URI="#http://eln.fss.ru/actor/mo/1025401011833"/>
+          </wsse:SecurityTokenReference>
+        </ds:KeyInfo>
+        <object>
+          <authority xmlns="urn:ru:fss:integration:types:signature:v01">
+            <powerOfAttorneyLink xmlns="urn:ru:fss:integration:types:mchd:v01">
+              <uuid xmlns="urn:ru:fss:integration:types:mchd:v01">7bb85069-10f7-4ae7-ac55-c692fbadb6ad</uuid>
+            </powerOfAttorneyLink>
+          </authority>
+        </object>
+      </ds:Signature>
+      <wsse:BinarySecurityToken EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" wsu:Id="http://eln.fss.ru/actor/mo/1025401011833">MIIFRDCCBPGgAwIBAgITfAAEQRZXOvaup64JdwABAARBFjAKBggqhQMHAQEDAjCCAQoxGDAWBgUqhQNkARINMTIzNDU2Nzg5MDEyMzEaMBgGCCqFAwOBAwEBEgwwMDEyMzQ1Njc4OTAxLzAtBgNVBAkMJtGD0LsuINCh0YPRidGR0LLRgdC60LjQuSDQstCw0Lsg0LQuIDE4MQswCQYDVQQGEwJSVTEZMBcGA1UECAwQ0LMuINCc0L7RgdC60LLQsDEVMBMGA1UEBwwM0JzQvtGB0LrQstCwMSUwIwYDVQQKDBzQntCe0J4gItCa0KDQmNCf0KLQni3Qn9Cg0J4iMTswOQYDVQQDDDLQotC10YHRgtC+0LLRi9C5INCj0KYg0J7QntCeICLQmtCg0JjQn9Ci0J4t0J/QoNCeIjAeFw0yMTEyMTAwOTM4NTVaFw0yMjAzMTAwOTQ4NTVaMIHBMRowGAYIKoUDA4EDAQESDDU3NDY3NDY1NDUzMzEWMBQGBSqFA2QDEgs1NDM1NDMzNTQzNTEZMBcGA1UEDAwQ0JTQuNGA0LXQutGC0L7RgDEcMBoGA1UEKgwT0JzQtdC00LLQtdC00LXQsiDQmDEZMBcGA1UEBAwQ0JzQtdC00LLQtdC00LXQsjE3MDUGA1UEAwwu0JzQtdC00LLQtdC00LXQsiDQmNC70YzRjyDQktCw0YHQuNC70YzQtdCy0LjRhzBmMB8GCCqFAwcBAQEBMBMGByqFAwICJAAGCCqFAwcBAQICA0MABEC6Wr7FnCaa7Xa5eFYmhsaWJSZV7kIh12DxFU3BXJ0QfwJp4yq8W4qjqXWUDrq7KLPWsXMM51xltYq0PrSV+tbBo4ICbTCCAmkwJwYDVR0lBCAwHgYIKwYBBQUHAwEGCCsGAQUFBwMCBggrBgEFBQcDBDAOBgNVHQ8BAf8EBAMCBPAwHQYDVR0OBBYEFGM6Zn0KXdUBhah71/J2LhZJ1/beMB8GA1UdIwQYMBaAFJuFXvuB3E1ZB1Fjz77f2ix/yUQ8MIIBDwYDVR0fBIIBBjCCAQIwgf+ggfyggfmGgbVodHRwOi8vdGVzdGdvc3QyMDEyLmNyeXB0b3Byby5ydS9DZXJ0RW5yb2xsLyEwNDIyITA0MzUhMDQ0MSEwNDQyITA0M2UhMDQzMiEwNDRiITA0MzklMjAhMDQyMyEwNDI2JTIwITA0MWUhMDQxZSEwNDFlJTIwITAwMjIhMDQxYSEwNDIwITA0MTghMDQxZiEwNDIyITA0MWUtITA0MWYhMDQyMCEwNDFlITAwMjIoMSkuY3Jshj9odHRwOi8vdGVzdGdvc3QyMDEyLmNyeXB0b3Byby5ydS9DZXJ0RW5yb2xsL3Rlc3Rnb3N0MjAxMigxKS5jcmwwgdoGCCsGAQUFBwEBBIHNMIHKMEQGCCsGAQUFBzAChjhodHRwOi8vdGVzdGdvc3QyMDEyLmNyeXB0b3Byby5ydS9DZXJ0RW5yb2xsL3Jvb3QyMDE4LmNydDA/BggrBgEFBQcwAYYzaHR0cDovL3Rlc3Rnb3N0MjAxMi5jcnlwdG9wcm8ucnUvb2NzcDIwMTJnL29jc3Auc3JmMEEGCCsGAQUFBzABhjVodHRwOi8vdGVzdGdvc3QyMDEyLmNyeXB0b3Byby5ydS9vY3NwMjAxMmdzdC9vY3NwLnNyZjAKBggqhQMHAQEDAgNBAJ7xl9/3LWvSMfYtTokz/PWFstdZtettG3uqR0n8alTQWO095KSA0/gYBVs6JMl66TgYbJ2bfjioM8/TeE7mee0=</wsse:BinarySecurityToken>
+    </wsse:Security>
+  </S:Header>
+  <soapenv:Body wsu:Id="OGRN_1025401011833" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+    <getLNListBySnilsRequest xmlns="http://www.fss.ru/integration/types/eln/mo/v01">
+      <ogrn>1025401011833</ogrn>
+      <snils>24846062485</snils>
+    </getLNListBySnilsRequest>
+  </soapenv:Body>
+</soapenv:Envelope>
