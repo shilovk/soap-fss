@@ -81,6 +81,7 @@ GEM
     byebug (11.1.3)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
+    crypto_gost3411 (0.1.7)
     date (3.3.3)
     erubi (1.12.0)
     globalid (1.1.0)
@@ -103,7 +104,6 @@ GEM
     marcel (1.0.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.2)
     minitest (5.18.1)
     net-imap (0.3.6)
       date
@@ -115,8 +115,7 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
-    nokogiri (1.15.2)
-      mini_portile2 (~> 2.8.2)
+    nokogiri (1.15.2-arm64-darwin)
       racc (~> 1.4)
     nori (2.6.0)
     public_suffix (5.0.1)
@@ -171,8 +170,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.6.3)
-      mini_portile2 (~> 2.8.0)
+    sqlite3 (1.6.3-arm64-darwin)
     thor (1.2.2)
     timeout (0.3.2)
     tzinfo (2.0.6)
@@ -187,10 +185,11 @@ GEM
     zeitwerk (2.6.8)
 
 PLATFORMS
-  ruby
+  arm64-darwin-22
 
 DEPENDENCIES
   byebug
+  crypto_gost3411
   puma
   savon
   soap-fss!
@@ -198,4 +197,4 @@ DEPENDENCIES
   sqlite3
 
 BUNDLED WITH
-   1.17.2
+   2.4.14

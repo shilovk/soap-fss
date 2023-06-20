@@ -1,15 +1,18 @@
 # frozen_string_literal: true
 
 # Запрос генерации нового номера ЭЛН
+# Fss::GetNewLnNum.new(actor: '1027739443236', ogrn: '1027500716143').call
 class Fss::GetNewLnNum < Fss::Application
-  def initialize
-    super
-    @xml_data = File.read("#{Rails.root}/public/xml/get_new_ln_num.xml")
+  def call
+    response = client.call(:get_new_ln_num, message: envelop)
+    pp response.body
   end
 
-  def call
-    response = client.call(:get_new_ln_num, message: xml_data)
-    pp response.body
+  private
+
+  def envelop
+    @envelop = Fss::Envelop.new(actor: actor, ogrn: ogrn, operation: :get_new_ln_num).call
+    # @envelop = File.read("#{Rails.root}/public/xml/get_new_ln_num.xml")
   end
 end
 

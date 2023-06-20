@@ -50,4 +50,5 @@
 /config/master.key
 /test/dummy/config/master.key
 
-.idea/*
+.idea
+.byebug_history
