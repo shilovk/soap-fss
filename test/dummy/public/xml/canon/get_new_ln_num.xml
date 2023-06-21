@@ -1,0 +1,1 @@
+<soapenv:Body xmlns="http://www.w3.org/2000/09/xmldsig#" wsu:Id="OGRN_1027500716143"><v01:getNewLNNumRequest><v01:ogrn>1027500716143</v01:ogrn></v01:getNewLNNumRequest></soapenv:Body>

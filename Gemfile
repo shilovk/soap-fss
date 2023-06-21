@@ -12,6 +12,7 @@ gem "sprockets-rails"
 
 gem 'savon'
 gem 'crypto_gost3411'
+gem 'chilkat'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
