@@ -2,6 +2,9 @@
 
 # Заголовок сообщения
 class Fss::Header < Fss::Application
+  require_relative '../crypto/application'
+  require_relative './body'
+
   def call
     header
   end
@@ -52,11 +55,17 @@ class Fss::Header < Fss::Application
   end
 
   def digest_value
-    @digest_value ||= 'VxP6uAm/bMwcjy2ZmiynC/H39+smHgnV7lkxiie7XOM='
+    return @digest_value if @digest_value.present?
+
+    value = Fss::Body.new(ogrn: ogrn, operation: operation).call
+    canonicalize_value = Nokogiri::XML(value) { |config| config.strict }.canonicalize
+    @digest_value = Crypto::Application.new(operation: :create_hash, input: canonicalize_value).call
+    # @digest_value ||= 'VxP6uAm/bMwcjy2ZmiynC/H39+smHgnV7lkxiie7XOM='
   end
 
   def signature_value
-    @signature_value ||= '8QBHez/cXldYeAN3VisqirD8SIkvEPqdGU/Qy5v0OlBT9Qm4R+m7bp9Q4zXmjwraS7VeBhyliauk515E2CKDhw=='
+    @signature_value = Crypto::Application.new(operation: :create_sign, input: digest_value).call
+    # @signature_value ||= '8QBHez/cXldYeAN3VisqirD8SIkvEPqdGU/Qy5v0OlBT9Qm4R+m7bp9Q4zXmjwraS7VeBhyliauk515E2CKDhw=='
   end
 
   def uuid
